@@ -1,4 +1,5 @@
 import discord
+from fortune import fortune
 
 TOKEN = open('token', 'r').read()
 
@@ -21,6 +22,10 @@ async def on_message(message):
     if message.channel.name == 'shitposting':
         if user_message[-1] == '?':
             await message.channel.send('what was the question?')
+            return 
+
+        elif user_message == 'fortune':
+            await message.channel.send(fortune())
             return
 
 client.run(TOKEN)
