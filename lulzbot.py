@@ -2,7 +2,7 @@ import discord
 
 TOKEN = open('token', 'r').read()
 
-client = discord.Client()
+client = discord.Client(activity=discord.Game(name='with myself'))
 
 @client.event
 async def on_ready():
