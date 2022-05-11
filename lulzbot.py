@@ -15,12 +15,11 @@ async def on_message(message):
     channel = str(message.channel.name)
     print(f'{username}: {user_message} ({channel})')
 
-
     if message.author == client.user:
         return 
     
     if message.channel.name == 'shitposting':
-        if user_message.lower()[-1] == '?':
+        if user_message[-1] == '?':
             await message.channel.send('what was the question?')
             return
 
